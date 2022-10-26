@@ -5,9 +5,9 @@ This repo hosts usefull [nix](https://nixos.org/nix) expressions to compile thin
 
 # How to use it
 
-If you know how to use nix, the default.nix file defines a derivation.
+If you know how to use nix, the default.nix file defines an overlay.
 
-This derivation does multiple things:
+This overlay does multiple things:
 - it changes the rust version and settings to compile to webassembly
 - it download naersk, a nix buildtool for rust
 - it defines a function buildWasmWithTrunk, which takes a trunk project and directly compile it
