@@ -22,6 +22,8 @@ in
 
 ```
 
+<p class="callout warning">Make sure you use wasm-bindgen version 0.2.78 in your Cargo.toml, otherwise it will not work !</p>
+
 
 # Goals
 
