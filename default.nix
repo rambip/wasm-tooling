@@ -25,7 +25,7 @@ let
                 src = source;
                 cargoBuild = args: '''';
                 copyBins = false;
-                postInstall = ''final.trunk build -d $out'';
+                postInstall = ''trunk build -d $out'';
                 buildInputs = [prev.trunk final.wasm-bindgen-cli prev.binaryen];
             };
         };
