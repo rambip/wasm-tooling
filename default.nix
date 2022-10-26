@@ -31,7 +31,11 @@ let
             };
         };
 
-in
+        composeExtensions =
+    f: g: final: prev:
+      let fApplied = f final prev;
+          prev' = prev // fApplied;
+      in fApplied // g final prev';
 
-final: prev:
-    prev // ((custom-overlay final) (prev // (rust-overlay final prev)))
+in
+    composeExtensions rust-overlay custom-overlay
