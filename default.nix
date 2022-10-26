@@ -1,6 +1,11 @@
 let
+    # sources
+    sources = import ./nix/sources.nix;
+
     # to get the exact rust version I want, with wasm enabled
-    rust-overlay = (import (builtins.fetchTarball "https://github.com/oxalica/rust-overlay/archive/master.tar.gz"));
+    rust-overlay = import sources.rust-overlay;
+
+    pinned-pkgs = import sources.nixpkgs {};
 
     custom-overlay = final: prev:
         {
@@ -10,17 +15,11 @@ let
             rustc = final.rust-custom;
             cargo = final.rust-custom;
 
-            naersk = prev.callPackage (import (builtins.fetchTarball "https://github.com/nix-community/naersk/archive/master.tar.gz")) {};
+            # best nix-rust build tool
+            naersk = prev.callPackage (import sources.naersk) {};
 
-            wasm-bindgen-cli = final.naersk.buildPackage {
-                src =(prev.fetchCrate {
-                        pname = "wasm-bindgen-cli";
-                        version = "0.2.78";
-                        sha256 = "sha256-5s+HidnVfDV0AXA+/YcXNGVjv/E9JeK0Ttng4mCVX8M=";
-                        });
-                buildInputs = [prev.openssl];
-                nativeBuildInputs = [ prev.pkg-config ];
-            };
+            # specific version !
+            wasm-bindgen-cli = pinned-pkgs.wasm-bindgen-cli;
 
             buildWasmWithTrunk = source: final.naersk.buildPackage {
                 src = source;
@@ -31,11 +30,5 @@ let
             };
         };
 
-        composeExtensions =
-    f: g: final: prev:
-      let fApplied = f final prev;
-          prev' = prev // fApplied;
-      in fApplied // g final prev';
-
 in
-    composeExtensions rust-overlay custom-overlay
+    pinned-pkgs.lib.composeExtensions rust-overlay custom-overlay
