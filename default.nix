@@ -10,7 +10,7 @@ let
         overlays = [rust-overlay];
     };
 
-    rust-custom = pinned-pkgs.rust-bin.stable.latest.default.minimal.override {
+    rust-custom = pinned-pkgs.rust-bin.stable.latest.minimal.override {
         targets = ["wasm32-unknown-unknown"];
     };
 
