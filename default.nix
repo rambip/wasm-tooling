@@ -24,6 +24,7 @@ in
 
 rec {
     inherit naersk;
+    inherit rust-custom;
     wasm-bindgen-cli = pinned-pkgs.wasm-bindgen-cli;
     buildWasmWithTrunk = {src}: naersk.buildPackage {
         inherit src;
