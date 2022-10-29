@@ -23,6 +23,7 @@ let
 
 in
 {
+    inherit naersk;
     buildWasmWithTrunk = {src}: naersk.buildPackage {
         inherit src;
         cargoBuild = args: '''';
