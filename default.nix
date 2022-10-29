@@ -27,7 +27,7 @@ let
             src = sources."wasm-bindgen-${version}-${system}";
             installPhase = ''
             mkdir -p $out/bin
-            cp wasm-bindgen wasm-bindgen-test-runner $out/bin
+            cp wasm-bindgen wasm-bindgen-test-runner wasm2es6js $out/bin
             '';
         };
 

@@ -41,11 +41,23 @@
         "url": "https://github.com/rustwasm/wasm-bindgen/releases/download/0.2.73/wasm-bindgen-0.2.73-x86_64-unknown-linux-musl.tar.gz",
         "url_template": "https://github.com/rustwasm/wasm-bindgen/releases/download/0.2.73/wasm-bindgen-0.2.73-x86_64-unknown-linux-musl.tar.gz"
     },
+    "wasm-bindgen-0.2.74-x86_64-darwin": {
+        "sha256": "12a4l4rpwpn14ixdxlwkn2r8y72b0wsrnj71lvq854slmrw26rqq",
+        "type": "tarball",
+        "url": "https://github.com/rustwasm/wasm-bindgen/releases/download/0.2.74/wasm-bindgen-0.2.74-x86_64-apple-darwin.tar.gz",
+        "url_template": "https://github.com/rustwasm/wasm-bindgen/releases/download/0.2.74/wasm-bindgen-0.2.74-x86_64-apple-darwin.tar.gz"
+    },
     "wasm-bindgen-0.2.74-x86_64-linux": {
         "sha256": "0bhmn40rqb9am71q9wimi4zasdqlgb7v283a06m1fmm5z1ldi78f",
         "type": "tarball",
         "url": "https://github.com/rustwasm/wasm-bindgen/releases/download/0.2.74/wasm-bindgen-0.2.74-x86_64-unknown-linux-musl.tar.gz",
         "url_template": "https://github.com/rustwasm/wasm-bindgen/releases/download/0.2.74/wasm-bindgen-0.2.74-x86_64-unknown-linux-musl.tar.gz"
+    },
+    "wasm-bindgen-0.2.75-x86_64-darwin": {
+        "sha256": "02wyslgxiif9z0k0idsf410n1j2i6q9ma6fa8ljkmzzvqn42dfbq",
+        "type": "tarball",
+        "url": "https://github.com/rustwasm/wasm-bindgen/releases/download/0.2.75/wasm-bindgen-0.2.75-x86_64-apple-darwin.tar.gz",
+        "url_template": "https://github.com/rustwasm/wasm-bindgen/releases/download/0.2.75/wasm-bindgen-0.2.75-x86_64-apple-darwin.tar.gz"
     },
     "wasm-bindgen-0.2.75-x86_64-linux": {
         "sha256": "0sn1ayjyn95am9d9pjrkralhv90271wgki6yg3d151y3l7239pxh",
@@ -53,11 +65,23 @@
         "url": "https://github.com/rustwasm/wasm-bindgen/releases/download/0.2.75/wasm-bindgen-0.2.75-x86_64-unknown-linux-musl.tar.gz",
         "url_template": "https://github.com/rustwasm/wasm-bindgen/releases/download/0.2.75/wasm-bindgen-0.2.75-x86_64-unknown-linux-musl.tar.gz"
     },
+    "wasm-bindgen-0.2.76-x86_64-darwin": {
+        "sha256": "0xadhllam2nfrn2kxi04vpm9p6dqk184jhf3wzdl4884hyc85ir0",
+        "type": "tarball",
+        "url": "https://github.com/rustwasm/wasm-bindgen/releases/download/0.2.76/wasm-bindgen-0.2.76-x86_64-apple-darwin.tar.gz",
+        "url_template": "https://github.com/rustwasm/wasm-bindgen/releases/download/0.2.76/wasm-bindgen-0.2.76-x86_64-apple-darwin.tar.gz"
+    },
     "wasm-bindgen-0.2.76-x86_64-linux": {
         "sha256": "02jzpg9c7k6c5xap6kx4nkysd43f0w3qh3qv6l0qwc2xkbdx3g86",
         "type": "tarball",
         "url": "https://github.com/rustwasm/wasm-bindgen/releases/download/0.2.76/wasm-bindgen-0.2.76-x86_64-unknown-linux-musl.tar.gz",
         "url_template": "https://github.com/rustwasm/wasm-bindgen/releases/download/0.2.76/wasm-bindgen-0.2.76-x86_64-unknown-linux-musl.tar.gz"
+    },
+    "wasm-bindgen-0.2.77-x86_64-darwin": {
+        "sha256": "18qhknhlsxknlpfydl174jyn1wyr4cnz4nxcbn11828xrlzhpmff",
+        "type": "tarball",
+        "url": "https://github.com/rustwasm/wasm-bindgen/releases/download/0.2.77/wasm-bindgen-0.2.77-x86_64-apple-darwin.tar.gz",
+        "url_template": "https://github.com/rustwasm/wasm-bindgen/releases/download/0.2.77/wasm-bindgen-0.2.77-x86_64-apple-darwin.tar.gz"
     },
     "wasm-bindgen-0.2.77-x86_64-linux": {
         "sha256": "1afza2c8knxa8h1bgzh5dc6vg2lhc7gbspqarx1qvi5b804pa1w1",
@@ -65,11 +89,23 @@
         "url": "https://github.com/rustwasm/wasm-bindgen/releases/download/0.2.77/wasm-bindgen-0.2.77-x86_64-unknown-linux-musl.tar.gz",
         "url_template": "https://github.com/rustwasm/wasm-bindgen/releases/download/0.2.77/wasm-bindgen-0.2.77-x86_64-unknown-linux-musl.tar.gz"
     },
+    "wasm-bindgen-0.2.78-x86_64-darwin": {
+        "sha256": "1fysqphhg5aj7v64n10cpnzls67pvdawl3iwn5dnsq8nxgi1lpwh",
+        "type": "tarball",
+        "url": "https://github.com/rustwasm/wasm-bindgen/releases/download/0.2.78/wasm-bindgen-0.2.78-x86_64-apple-darwin.tar.gz",
+        "url_template": "https://github.com/rustwasm/wasm-bindgen/releases/download/0.2.78/wasm-bindgen-0.2.78-x86_64-apple-darwin.tar.gz"
+    },
     "wasm-bindgen-0.2.78-x86_64-linux": {
         "sha256": "0np9f9502z1afsj5f399m406bm1gcjv9mgbaykhmxqyvpxakfwhr",
         "type": "tarball",
         "url": "https://github.com/rustwasm/wasm-bindgen/releases/download/0.2.78/wasm-bindgen-0.2.78-x86_64-unknown-linux-musl.tar.gz",
         "url_template": "https://github.com/rustwasm/wasm-bindgen/releases/download/0.2.78/wasm-bindgen-0.2.78-x86_64-unknown-linux-musl.tar.gz"
+    },
+    "wasm-bindgen-0.2.79-x86_64-darwin": {
+        "sha256": "0h1v75n277saw8rr0cbrsiaj35g84d2dhg4zkipig0icgzc4msyi",
+        "type": "tarball",
+        "url": "https://github.com/rustwasm/wasm-bindgen/releases/download/0.2.79/wasm-bindgen-0.2.79-x86_64-apple-darwin.tar.gz",
+        "url_template": "https://github.com/rustwasm/wasm-bindgen/releases/download/0.2.79/wasm-bindgen-0.2.79-x86_64-apple-darwin.tar.gz"
     },
     "wasm-bindgen-0.2.79-x86_64-linux": {
         "sha256": "05wm8kp0xm211a395g3jxh2cp5a3crma8lyna3rssm14i84m1cxb",
@@ -77,11 +113,23 @@
         "url": "https://github.com/rustwasm/wasm-bindgen/releases/download/0.2.79/wasm-bindgen-0.2.79-x86_64-unknown-linux-musl.tar.gz",
         "url_template": "https://github.com/rustwasm/wasm-bindgen/releases/download/0.2.79/wasm-bindgen-0.2.79-x86_64-unknown-linux-musl.tar.gz"
     },
+    "wasm-bindgen-0.2.80-x86_64-darwin": {
+        "sha256": "0259539lzlgppcmw8lw45gkywvh6cv439clc07ss5n04li4zbchh",
+        "type": "tarball",
+        "url": "https://github.com/rustwasm/wasm-bindgen/releases/download/0.2.80/wasm-bindgen-0.2.80-x86_64-apple-darwin.tar.gz",
+        "url_template": "https://github.com/rustwasm/wasm-bindgen/releases/download/0.2.80/wasm-bindgen-0.2.80-x86_64-apple-darwin.tar.gz"
+    },
     "wasm-bindgen-0.2.80-x86_64-linux": {
         "sha256": "0wg195f8p874dymw6z2aygkclrscskfa146kdmvfc5kn2c7983qf",
         "type": "tarball",
         "url": "https://github.com/rustwasm/wasm-bindgen/releases/download/0.2.80/wasm-bindgen-0.2.80-x86_64-unknown-linux-musl.tar.gz",
         "url_template": "https://github.com/rustwasm/wasm-bindgen/releases/download/0.2.80/wasm-bindgen-0.2.80-x86_64-unknown-linux-musl.tar.gz"
+    },
+    "wasm-bindgen-0.2.81-x86_64-darwin": {
+        "sha256": "1fwgqq30nmph7kn6ryicam9r3bj1b88dph1l218mskjj2xhgyq41",
+        "type": "tarball",
+        "url": "https://github.com/rustwasm/wasm-bindgen/releases/download/0.2.81/wasm-bindgen-0.2.81-x86_64-apple-darwin.tar.gz",
+        "url_template": "https://github.com/rustwasm/wasm-bindgen/releases/download/0.2.81/wasm-bindgen-0.2.81-x86_64-apple-darwin.tar.gz"
     },
     "wasm-bindgen-0.2.81-x86_64-linux": {
         "sha256": "17r1rpx7yzwvr7bxzqjanz51x1nlbflp7971vmkx41m610y1wjsn",
@@ -89,11 +137,23 @@
         "url": "https://github.com/rustwasm/wasm-bindgen/releases/download/0.2.81/wasm-bindgen-0.2.81-x86_64-unknown-linux-musl.tar.gz",
         "url_template": "https://github.com/rustwasm/wasm-bindgen/releases/download/0.2.81/wasm-bindgen-0.2.81-x86_64-unknown-linux-musl.tar.gz"
     },
+    "wasm-bindgen-0.2.82-x86_64-darwin": {
+        "sha256": "0w0rxpmijmkvhr7h8p53fngaasmp9gml3qn07cbvfa25lflcyhgi",
+        "type": "tarball",
+        "url": "https://github.com/rustwasm/wasm-bindgen/releases/download/0.2.82/wasm-bindgen-0.2.82-x86_64-apple-darwin.tar.gz",
+        "url_template": "https://github.com/rustwasm/wasm-bindgen/releases/download/0.2.82/wasm-bindgen-0.2.82-x86_64-apple-darwin.tar.gz"
+    },
     "wasm-bindgen-0.2.82-x86_64-linux": {
         "sha256": "0aa0p2lxaydjm6q314d7rhvcs2fh1p638fpk9bh5xafc2b7yg013",
         "type": "tarball",
         "url": "https://github.com/rustwasm/wasm-bindgen/releases/download/0.2.82/wasm-bindgen-0.2.82-x86_64-unknown-linux-musl.tar.gz",
         "url_template": "https://github.com/rustwasm/wasm-bindgen/releases/download/0.2.82/wasm-bindgen-0.2.82-x86_64-unknown-linux-musl.tar.gz"
+    },
+    "wasm-bindgen-0.2.83-x86_64-darwin": {
+        "sha256": "0wln84hp0syg5sglm2r45xfxpkx6mq7223lzk47x07m1cdbqgc1x",
+        "type": "tarball",
+        "url": "https://github.com/rustwasm/wasm-bindgen/releases/download/0.2.83/wasm-bindgen-0.2.83-x86_64-apple-darwin.tar.gz",
+        "url_template": "https://github.com/rustwasm/wasm-bindgen/releases/download/0.2.83/wasm-bindgen-0.2.83-x86_64-apple-darwin.tar.gz"
     },
     "wasm-bindgen-0.2.83-x86_64-linux": {
         "sha256": "0r0yr6yv5mhmwdq7j9zv6s764bp2hn7sqppd8pyzqnrsf09da89z",
