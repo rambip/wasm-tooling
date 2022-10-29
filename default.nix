@@ -1,3 +1,4 @@
+{pkgs ? import <nixpkgs> {}}:
 let
     # sources
     sources = import ./nix/sources.nix;
@@ -5,30 +6,28 @@ let
     # to get the exact rust version I want, with wasm enabled
     rust-overlay = import sources.rust-overlay;
 
-    pinned-pkgs = import sources.nixpkgs {};
+    pinned-pkgs = import sources.nixpkgs {
+        overlays = [rust-overlay];
+    };
 
-    custom-overlay = final: prev:
-        {
-            rust-custom = prev.rust-bin.stable."${prev.rustc.version}".minimal.override {
-                targets = ["wasm32-unknown-unknown"];
-            };
-            rustc = final.rust-custom;
-            cargo = final.rust-custom;
+    rust-custom = pinned-pkgs.rust-bin.stable.default.minimal.override {
+        targets = ["wasm32-unknown-unknown"];
+    };
 
-            # best nix-rust build tool
-            naersk = prev.callPackage (import sources.naersk) {};
+    wasm-bindgen-cli = pinned-pkgs.wasm-bindgen-cli;
 
-            # specific version !
-            wasm-bindgen-cli = pinned-pkgs.wasm-bindgen-cli;
-
-            buildWasmWithTrunk = source: final.naersk.buildPackage {
-                src = source;
-                cargoBuild = args: '''';
-                copyBins = false;
-                postInstall = ''trunk build -d $out'';
-                buildInputs = [prev.trunk final.wasm-bindgen-cli prev.binaryen];
-            };
-        };
+    naersk = pkgs.callPackage sources.naersk {
+        cargo = rust-custom;
+        rustc = rust-custom;
+    };
 
 in
-    pinned-pkgs.lib.composeExtensions rust-overlay custom-overlay
+{
+    buildWasmWithTrunk = {src}: naersk.buildPackage {
+        inherit src;
+        cargoBuild = args: '''';
+        copyBins = false;
+        postInstall = ''trunk build -d $out'';
+        buildInputs = [pkgs.trunk wasm-bindgen-cli pkgs.binaryen];
+    };
+}
