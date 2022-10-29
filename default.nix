@@ -14,7 +14,6 @@ let
         targets = ["wasm32-unknown-unknown"];
     };
 
-    wasm-bindgen-cli = pinned-pkgs.wasm-bindgen-cli;
 
     naersk = pkgs.callPackage sources.naersk {
         cargo = rust-custom;
@@ -22,8 +21,10 @@ let
     };
 
 in
-{
+
+rec {
     inherit naersk;
+    wasm-bindgen-cli = pinned-pkgs.wasm-bindgen-cli;
     buildWasmWithTrunk = {src}: naersk.buildPackage {
         inherit src;
         cargoBuild = args: '''';
