@@ -5,20 +5,15 @@ This repo hosts usefull [nix](https://nixos.org/nix) expressions to compile thin
 
 # How to use it
 
-If you know how to use nix, the default.nix file defines an overlay.
-
-This overlay does multiple things:
-- it changes the rust version and settings to compile to webassembly
-- it download naersk, a nix buildtool for rust
-- it defines a function buildWasmWithTrunk, which takes a trunk project and directly compile it
 
 For example, you can use it like this in your trunk project:
 
 ```nix
-let my-overlay = import (builtins.fetchTarball "https://github.com/rambip/wasm-tooling/archive/master.tar.gz");
-    pkgs = import <nixpkgs> {overlays = [my-overlay];};
+{pkgs? import <nixpkgs> {}}:
+let wasm-bindgen-cli-version = "0.2.80";
+    wasm-tools = callPackage (builtins.fetchTarball "https://github.com/rambip/wasm-tooling/archive/master.tar.gz") {inheri wasm-bindgen-cli-version};
 in
-    buildWasmWithTrunk ./.
+    wasm-tools.buildWasmWithTrunk ./.
 
 ```
 

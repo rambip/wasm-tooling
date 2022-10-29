@@ -1,4 +1,4 @@
-{pkgs ? import <nixpkgs> {}}:
+{pkgs, wasm-bindgen-cli-version}:
 let
     # sources
     sources = import ./nix/sources.nix;
@@ -20,12 +20,23 @@ let
         rustc = rust-custom;
     };
 
+    get-wasm-bindgen-cli = {system, version}:
+        pkgs.stdenv.mkDerivation {
+            name = "wasm-bindgen-cli";
+            inherit version;
+            src = sources."wasm-bindgen-${version}-${system}";
+            installPhase = ''
+            mkdir -p $out/bin
+            cp wasm-bindgen wasm-bindgen-test-runner $out/bin
+            '';
+        };
+
 in
 
 rec {
     inherit naersk;
     inherit rust-custom;
-    wasm-bindgen-cli = pinned-pkgs.wasm-bindgen-cli;
+    wasm-bindgen-cli = get-wasm-bindgen-cli {system=pkgs.system; version=wasm-bindgen-cli-version;};
     buildWasmWithTrunk = {src}: naersk.buildPackage {
         inherit src;
         cargoBuild = args: '''';

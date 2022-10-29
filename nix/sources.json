@@ -34,5 +34,77 @@
         "type": "tarball",
         "url": "https://github.com/oxalica/rust-overlay/archive/34d76c0a001d81a0fac342698ce7926da37b8ea5.tar.gz",
         "url_template": "https://github.com/<owner>/<repo>/archive/<rev>.tar.gz"
+    },
+    "wasm-bindgen-0.2.73-x86_64-linux": {
+        "sha256": "02ssgc9ljxi894kkg32zizfwkq1j5qsn4w1yimas8ydb2pafam5n",
+        "type": "tarball",
+        "url": "https://github.com/rustwasm/wasm-bindgen/releases/download/0.2.73/wasm-bindgen-0.2.73-x86_64-unknown-linux-musl.tar.gz",
+        "url_template": "https://github.com/rustwasm/wasm-bindgen/releases/download/0.2.73/wasm-bindgen-0.2.73-x86_64-unknown-linux-musl.tar.gz"
+    },
+    "wasm-bindgen-0.2.74-x86_64-linux": {
+        "sha256": "0bhmn40rqb9am71q9wimi4zasdqlgb7v283a06m1fmm5z1ldi78f",
+        "type": "tarball",
+        "url": "https://github.com/rustwasm/wasm-bindgen/releases/download/0.2.74/wasm-bindgen-0.2.74-x86_64-unknown-linux-musl.tar.gz",
+        "url_template": "https://github.com/rustwasm/wasm-bindgen/releases/download/0.2.74/wasm-bindgen-0.2.74-x86_64-unknown-linux-musl.tar.gz"
+    },
+    "wasm-bindgen-0.2.75-x86_64-linux": {
+        "sha256": "0sn1ayjyn95am9d9pjrkralhv90271wgki6yg3d151y3l7239pxh",
+        "type": "tarball",
+        "url": "https://github.com/rustwasm/wasm-bindgen/releases/download/0.2.75/wasm-bindgen-0.2.75-x86_64-unknown-linux-musl.tar.gz",
+        "url_template": "https://github.com/rustwasm/wasm-bindgen/releases/download/0.2.75/wasm-bindgen-0.2.75-x86_64-unknown-linux-musl.tar.gz"
+    },
+    "wasm-bindgen-0.2.76-x86_64-linux": {
+        "sha256": "02jzpg9c7k6c5xap6kx4nkysd43f0w3qh3qv6l0qwc2xkbdx3g86",
+        "type": "tarball",
+        "url": "https://github.com/rustwasm/wasm-bindgen/releases/download/0.2.76/wasm-bindgen-0.2.76-x86_64-unknown-linux-musl.tar.gz",
+        "url_template": "https://github.com/rustwasm/wasm-bindgen/releases/download/0.2.76/wasm-bindgen-0.2.76-x86_64-unknown-linux-musl.tar.gz"
+    },
+    "wasm-bindgen-0.2.77-x86_64-linux": {
+        "sha256": "1afza2c8knxa8h1bgzh5dc6vg2lhc7gbspqarx1qvi5b804pa1w1",
+        "type": "tarball",
+        "url": "https://github.com/rustwasm/wasm-bindgen/releases/download/0.2.77/wasm-bindgen-0.2.77-x86_64-unknown-linux-musl.tar.gz",
+        "url_template": "https://github.com/rustwasm/wasm-bindgen/releases/download/0.2.77/wasm-bindgen-0.2.77-x86_64-unknown-linux-musl.tar.gz"
+    },
+    "wasm-bindgen-0.2.78-x86_64-linux": {
+        "sha256": "0np9f9502z1afsj5f399m406bm1gcjv9mgbaykhmxqyvpxakfwhr",
+        "type": "tarball",
+        "url": "https://github.com/rustwasm/wasm-bindgen/releases/download/0.2.78/wasm-bindgen-0.2.78-x86_64-unknown-linux-musl.tar.gz",
+        "url_template": "https://github.com/rustwasm/wasm-bindgen/releases/download/0.2.78/wasm-bindgen-0.2.78-x86_64-unknown-linux-musl.tar.gz"
+    },
+    "wasm-bindgen-0.2.79-x86_64-linux": {
+        "sha256": "05wm8kp0xm211a395g3jxh2cp5a3crma8lyna3rssm14i84m1cxb",
+        "type": "tarball",
+        "url": "https://github.com/rustwasm/wasm-bindgen/releases/download/0.2.79/wasm-bindgen-0.2.79-x86_64-unknown-linux-musl.tar.gz",
+        "url_template": "https://github.com/rustwasm/wasm-bindgen/releases/download/0.2.79/wasm-bindgen-0.2.79-x86_64-unknown-linux-musl.tar.gz"
+    },
+    "wasm-bindgen-0.2.80-x86_64-linux": {
+        "sha256": "0wg195f8p874dymw6z2aygkclrscskfa146kdmvfc5kn2c7983qf",
+        "type": "tarball",
+        "url": "https://github.com/rustwasm/wasm-bindgen/releases/download/0.2.80/wasm-bindgen-0.2.80-x86_64-unknown-linux-musl.tar.gz",
+        "url_template": "https://github.com/rustwasm/wasm-bindgen/releases/download/0.2.80/wasm-bindgen-0.2.80-x86_64-unknown-linux-musl.tar.gz"
+    },
+    "wasm-bindgen-0.2.81-x86_64-linux": {
+        "sha256": "17r1rpx7yzwvr7bxzqjanz51x1nlbflp7971vmkx41m610y1wjsn",
+        "type": "tarball",
+        "url": "https://github.com/rustwasm/wasm-bindgen/releases/download/0.2.81/wasm-bindgen-0.2.81-x86_64-unknown-linux-musl.tar.gz",
+        "url_template": "https://github.com/rustwasm/wasm-bindgen/releases/download/0.2.81/wasm-bindgen-0.2.81-x86_64-unknown-linux-musl.tar.gz"
+    },
+    "wasm-bindgen-0.2.82-x86_64-linux": {
+        "sha256": "0aa0p2lxaydjm6q314d7rhvcs2fh1p638fpk9bh5xafc2b7yg013",
+        "type": "tarball",
+        "url": "https://github.com/rustwasm/wasm-bindgen/releases/download/0.2.82/wasm-bindgen-0.2.82-x86_64-unknown-linux-musl.tar.gz",
+        "url_template": "https://github.com/rustwasm/wasm-bindgen/releases/download/0.2.82/wasm-bindgen-0.2.82-x86_64-unknown-linux-musl.tar.gz"
+    },
+    "wasm-bindgen-0.2.83-x86_64-linux": {
+        "sha256": "0r0yr6yv5mhmwdq7j9zv6s764bp2hn7sqppd8pyzqnrsf09da89z",
+        "type": "tarball",
+        "url": "https://github.com/rustwasm/wasm-bindgen/releases/download/0.2.83/wasm-bindgen-0.2.83-x86_64-unknown-linux-musl.tar.gz",
+        "url_template": "https://github.com/rustwasm/wasm-bindgen/releases/download/0.2.83/wasm-bindgen-0.2.83-x86_64-unknown-linux-musl.tar.gz"
+    },
+    "wasm-bindgen-x86_64-linux": {
+        "sha256": "0r0yr6yv5mhmwdq7j9zv6s764bp2hn7sqppd8pyzqnrsf09da89z",
+        "type": "tarball",
+        "url": "https://github.com/rustwasm/wasm-bindgen/releases/download/0.2.83/wasm-bindgen-0.2.83-x86_64-unknown-linux-musl.tar.gz",
+        "url_template": "https://github.com/rustwasm/wasm-bindgen/releases/download/0.2.83/wasm-bindgen-0.2.83-x86_64-unknown-linux-musl.tar.gz"
     }
 }
