@@ -8,6 +8,7 @@ let
 
     pinned-pkgs = import sources.nixpkgs {
         overlays = [rust-overlay];
+        config = {system = pkgs.system;};
     };
 
     rust-custom = pinned-pkgs.rust-bin.stable.latest.minimal.override {
