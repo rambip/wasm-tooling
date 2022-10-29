@@ -1,4 +1,4 @@
-{pkgs, wasm-bindgen-cli-version}:
+{pkgs, wasm-bindgen-version}:
 let
     # sources
     sources = import ./nix/sources.nix;
@@ -36,7 +36,7 @@ in
 rec {
     inherit naersk;
     inherit rust-custom;
-    wasm-bindgen-cli = get-wasm-bindgen-cli {system=pkgs.system; version=wasm-bindgen-cli-version;};
+    wasm-bindgen-cli = get-wasm-bindgen-cli {system=pkgs.system; version=wasm-bindgen-version;};
     buildWasmWithTrunk = {src}: naersk.buildPackage {
         inherit src;
         cargoBuild = args: '''';
