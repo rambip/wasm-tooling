@@ -63,13 +63,10 @@ rec {
         postInstall = ''
             wasm-bindgen \
             --target web \
-            --out-dir site \
+            --out-dir $out \
             ./target/wasm32-unknown-unknown/release/*.wasm
 
-        wasm-opt -Os site/*.wasm -o site/*.wasm
-
-        cp *.html *.css *.js site
-        cp -r site $out
+        wasm-opt -Os $out/*.wasm -o $out/*.wasm
         '';
         buildInputs = [pkgs.binaryen (get-wasm-bindgen-cli {inherit src;})];
     };
