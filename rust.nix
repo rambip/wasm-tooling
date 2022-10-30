@@ -59,6 +59,7 @@ rec {
     buildWithWasmBindgen = {src}: naersk.buildPackage {
         inherit src;
         cargoBuildOptions = list: list++ ["--target=wasm32-unknown-unknown"];
+        copyBins = false;
         postInstall = ''
             wasm-bindgen \
             --target web \
