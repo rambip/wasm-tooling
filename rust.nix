@@ -68,7 +68,7 @@ rec {
         wasm-opt -Os site/*.wasm -o site/*.wasm
 
         cp *.html *.css *.js site
-        cp -r $site $out
+        cp -r site $out
         '';
         buildInputs = [pkgs.binaryen (get-wasm-bindgen-cli {inherit src;})];
     };
