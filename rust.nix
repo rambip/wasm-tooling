@@ -62,7 +62,7 @@ rec {
         postInstall = ''
             wasm-bindgen \
             --target web \
-            --out-dir site
+            --out-dir site \
             ./target/wasm32-unknown-unknown/release/*.wasm
 
         wasm-opt -Os site/*.wasm -o site/*.wasm
