@@ -10,10 +10,10 @@ For example, you can use it like this in your trunk project:
 
 ```nix
 {pkgs? import <nixpkgs> {}}:
-let wasm-bindgen-cli-version = "0.2.80";
-    wasm-tools = callPackage (builtins.fetchTarball "https://github.com/rambip/wasm-tooling/archive/master.tar.gz") {inheri wasm-bindgen-cli-version};
+let 
+    wasm-tools = callPackage (builtins.fetchTarball "https://github.com/rambip/wasm-tooling/archive/master.tar.gz"); 
 in
-    wasm-tools.buildWasmWithTrunk ./.
+    wasm-tools.rust.buildWithTrunk {src= ./.;}
 
 ```
 

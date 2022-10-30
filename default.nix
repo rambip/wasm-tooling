@@ -1,48 +1,8 @@
-{pkgs, wasm-bindgen-version}:
-let
-    # sources
-    sources = import ./nix/sources.nix;
-
-    # to get the exact rust version I want, with wasm enabled
-    rust-overlay = import sources.rust-overlay;
-
-    pinned-pkgs = import sources.nixpkgs {
-        overlays = [rust-overlay];
-        config = {system = pkgs.system;};
-    };
-
-    rust-custom = pinned-pkgs.rust-bin.stable.latest.minimal.override {
-        targets = ["wasm32-unknown-unknown"];
-    };
-
-
-    naersk = pkgs.callPackage sources.naersk {
-        cargo = rust-custom;
-        rustc = rust-custom;
-    };
-
-    get-wasm-bindgen-cli = {system, version}:
-        pkgs.stdenv.mkDerivation {
-            name = "wasm-bindgen-cli";
-            inherit version;
-            src = sources."wasm-bindgen-${version}-${system}";
-            installPhase = ''
-            mkdir -p $out/bin
-            cp wasm-bindgen wasm-bindgen-test-runner wasm2es6js $out/bin
-            '';
-        };
-
-in
-
-rec {
-    inherit naersk;
-    inherit rust-custom;
-    wasm-bindgen-cli = get-wasm-bindgen-cli {system=pkgs.system; version=wasm-bindgen-version;};
-    buildWasmWithTrunk = {src}: naersk.buildPackage {
-        inherit src;
-        cargoBuild = args: '''';
-        copyBins = false;
-        postInstall = ''trunk build -d $out'';
-        buildInputs = [pkgs.trunk wasm-bindgen-cli pkgs.binaryen];
-    };
-}
+{pkgs? import <nixpkgs> {}}:
+(import (
+  fetchTarball {
+    url = "https://github.com/edolstra/flake-compat/archive/12c64ca55c1014cdc1b16ed5a804aa8576601ff2.tar.gz";
+    sha256 = "0jm6nzb83wa6ai17ly9fzpqc40wg1viib8klq8lby54agpl213w5"; }
+) {
+  src =  ./.;
+}).defaultNix.packages."${pkgs.system}".wasm-tooling
