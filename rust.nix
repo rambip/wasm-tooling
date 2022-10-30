@@ -9,7 +9,7 @@ let
     get-wasm-bindgen-cli = {src}:
         let cargo_deps = (builtins.fromTOML (builtins.readFile "${src}/Cargo.toml")).dependencies;
             trunk_config = if builtins.pathExists "${src}/Trunk.toml"
-                          then (builtins.fromTOML (builtins.readFile "${src}/Trunk.toml"));
+                          then (builtins.fromTOML (builtins.readFile "${src}/Trunk.toml"))
                           else {};
             trunk_tools = if builtins.hassAttr "tools" trunk_config then trunk_config.tools else {};
 
