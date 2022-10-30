@@ -29,7 +29,7 @@ let
             isValid = version: builtins.hasAttr "wasm-bindgen-${version}-${pkgs.system}" sources;
             versions = builtins.filter isValid [version_cargo version_trunk];
 
-            version = if (builtins.length versions) == 0 then "0.2.80" else builtins.head versions;
+            version = if (builtins.length versions) == 0 then "0.2.83" else builtins.head versions;
 
         in 
             pkgs.stdenv.mkDerivation {
@@ -56,6 +56,23 @@ rec {
             pkgs.binaryen
         ];
     };
+    buildWithWasmBindgen = {src}: naersk.buildPackage {
+        inherit src;
+        cargoBuildOptions = list: list++ ["--target=wasm32-unknown-unknown"];
+        postInstall = ''
+            wasm-bindgen \
+            --target web \
+            --out-dir site
+            ./target/wasm32-unknown-unknown/release/*.wasm
+
+        wasm-opt -Os site/*.wasm -o site/*.wasm
+
+        cp *.html *.css *.js site
+        cp -r $site $out
+        '';
+        buildInputs = [pkgs.binaryen (get-wasm-bindgen-cli {inherit src;})];
+    };
+    
     devShell = pkgs.mkShell {
         nativeBuildInputs = [rust-custom];
     };
