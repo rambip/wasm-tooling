@@ -1,5 +1,5 @@
 {pkgs? import <nixpkgs> {}}:
 let 
-    wasm-tools = pkgs.callPackage (builtins.fetchTarball "https://github.com/rambip/wasm-tooling/archive/master.tar.gz") {}; 
+    wasm-tools = pkgs.callPackage ../../default.nix {}; 
 in
-    wasm-tools.buildWithTrunk {src = ./.;}
+    wasm-tools.rust.buildWithTrunk {src = ./.;}

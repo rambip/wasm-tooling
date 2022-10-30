@@ -8,19 +8,22 @@
 
   outputs = { self, nixpkgs, rust-overlay, naersk}: 
   let get-pkgs = system: import nixpkgs {
-      overlays = [(import rust-overlay)]; config={inherit system;};
+      overlays = [(import rust-overlay)]; 
+      inherit system;
   };
 
-  in {
+  in rec{ 
 
     packages.x86_64-linux.wasm-tooling = 
     let pkgs = get-pkgs "x86_64-linux"; in {
-        rust = pkgs.callPackage ./rust.nix {naersk=pkgs.callPackage naersk {};};
+        rust = pkgs.callPackage ./rust.nix {naersk-src=naersk;};
     };
 
     packages.x86_64-darwin.wasm-tooling = 
     let pkgs = get-pkgs "x86_64-darwin"; in {
-        rust = pkgs.callPackage ./rust.nix {naersk=pkgs.callPackage naersk {};};
+        rust = pkgs.callPackage ./rust.nix {naersk-src=naersk;};
     };
+
+    devShells."x86_64-linux".rust = packages.x86_64-linux.wasm-tooling.rust.devShell;
   };
 }
