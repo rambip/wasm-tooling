@@ -11,26 +11,26 @@ let
         rustc = rust-custom;
     };
 
+    maybe = name: condition: if condition == false then null else name;
+
     get-wasm-bindgen-cli = {src}:
-        let cargo_deps = (builtins.fromTOML (builtins.readFile "${src}/Cargo.toml")).dependencies;
-            trunk_config = if builtins.pathExists "${src}/Trunk.toml"
-                          then (builtins.fromTOML (builtins.readFile "${src}/Trunk.toml"))
-                          else {};
-            trunk_tools = if builtins.hasAttr"tools" trunk_config then trunk_config.tools else {};
-
-            version_cargo = if builtins.hasAttr "wasm-bindgen" cargo_deps 
-                then builtins.replaceStrings ["="] [""] cargo_deps.wasm-bindgen 
-                else "0.2";
-
-            version_trunk = if builtins.hasAttr "wasm_bindgen" trunk_tools
-                then trunk_tools.wasm_bindgen
-                else "0.2";
-
+        let 
             isValid = version: builtins.hasAttr "wasm-bindgen-${version}-${pkgs.system}" sources;
-            versions = builtins.filter isValid [version_cargo version_trunk];
 
-            version = if (builtins.length versions) == 0 then "0.2.83" else builtins.head versions;
+            cargo_info = {
+                path = "${src}/Cargo.toml";
+                ${maybe "config" (builtins.pathExists cargo_info.path)} = builtins.fromTOML (builtins.readFile cargo_info.path);
+                ${maybe "raw_version" (cargo_info.config.dependencies.wasm-bindgen or false)} = cargo_info.config.dependencies.wasm-bindgen;
+                ${maybe "version" (cargo_info ? raw_version)} = builtins.replaceStrings ["="] [""] cargo_info.raw_version;
+                ${maybe "precise_version" (cargo_info ? version && isValid cargo_info.version)} = cargo_info.version;
+            };
+            trunk_info = {
+                path = "${src}/Trunk.toml";
+                ${maybe "config" (builtins.pathExists trunk_info.path)} = builtins.fromTOML (builtins.readFile cargo_info.path);
+                ${maybe "version" (trunk_info.dependencies.wasm-bindgen or false)} = trunk_info.dependencies.wasm-bindgen;
+            };
 
+            version = cargo_info.precise_version or trunk_info.version or "0.2.83"; 
         in 
             pkgs.stdenv.mkDerivation {
                 name = "wasm-bindgen-cli";
@@ -39,7 +39,7 @@ let
                 installPhase = ''
                 mkdir -p $out/bin
                 cp wasm-bindgen wasm-bindgen-test-runner wasm2es6js $out/bin
-                '';
+            '';
             }
         ;
 in
@@ -49,7 +49,7 @@ rec {
         inherit src;
         cargoBuild = args: '''';
         copyBins = false;
-        postInstall = ''trunk build -d $out'';
+        postInstall = ''wasm-bindgen --version && trunk build -d $out'';
         buildInputs = [
             (get-wasm-bindgen-cli {inherit src;})
             pkgs.trunk 
